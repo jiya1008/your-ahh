@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOCK SCREEN -->
+    <div id="lock-screen">
+        <h2>Enter the Secret Password:</h2>
+        <input type="password" id="password-input" placeholder="Type here...">
+        <button id="unlock-btn">Unlock</button>
+        <p id="error-msg" style="color:red;"></p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" style="display:none;">
+
+        <!-- Love Letter -->
+        <section id="love-letter">
+            <h1 id="letter-title"></h1>
+            <p id="letter-text"></p>
+        </section>
+
+        <!-- SLIDESHOW -->
+        <section id="gallery">
+            <h2>Our Memories Together 💞</h2>
+
+            <div class="slideshow">
+                <img src="images/photo1.jpeg" class="slide active">
+                <img src="images/photo2.jpeg" class="slide">
+                <img src="images/photo3.jpeg" class="slide">
+                <img src="images/photo4.jpeg" class="slide">
+                <img src="images/photo5.jpeg" class="slide">
+                <img src="images/photo6.jpeg" class="slide">
+                <img src="images/photo7.jpeg" class="slide">
+            </div>
+        </section>
+
+        <!-- GOOFY QUIZ -->
+        <section id="quiz">
+            <h2>How Well Do You Know Us 😜</h2>
+
+            <div class="quiz-question">
+                <p>Being annoying on purpose:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback1')">Illegal</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback1')">Allowed because love</button>
+                <p class="question-feedback" id="feedback1"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>Matching vibes:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback2')">Cringe</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback2')">Low-key cute, don't lie</button>
+                <p class="question-feedback" id="feedback2"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>Play fighting:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback3')">Take it too seriously</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback3')">Fake drama, real laughter</button>
+                <p class="question-feedback" id="feedback3"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>Inside jokes:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback4')">Forget them</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback4')">Overuse them forever</button>
+                <p class="question-feedback" id="feedback4"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>PDA level:</p>
+                <button onclick="checkAnswer(this,'correct', 'feedback5')">Touching your hair is non-negotiable</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback5')">Touching my ahh is non-negotiable</button>
+                <p class="question-feedback" id="feedback5"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>We pass a mirror:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback6')">Keep walking</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback6')">Stop for a quick us check 😌</button>
+                <p class="question-feedback" id="feedback6"></p>
+            </div>
+
+            <div class="quiz-question">
+                <p>Nicknames:</p>
+                <button onclick="checkAnswer(this,'wrong', 'feedback7')">Cringe</button>
+                <button onclick="checkAnswer(this,'correct', 'feedback7')">Secretly loves them</button>
+                <p class="question-feedback" id="feedback7"></p>
+            </div>
+        </section>
+
+        <!-- Hearts -->
+        <section id="hearts">
+            <h2>Click the ❤️s !!!</h2>
+            <div id="heart-container"></div>
+        </section>
+
+        <!-- Valentine -->
+        <section id="valentine" style="margin-top:50px;">
+            <h1>Will You Be My Valentine?</h1>
+            <button id="yes-btn">Yes</button>
+            <button id="no-btn">No</button>
+        </section>
+    </div>
+
+    <!-- Music -->
+    <audio id="bg-music" src="home.mp3" loop></audio>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

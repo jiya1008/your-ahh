@@ -1,0 +1,222 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff9ec7, #ffb3d9, #ffcce0, #ffe6f0, #ffb3d9, #ff9ec7);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #d6336c;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;     /* ⬆ Bigger base font */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animated floating hearts background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, rgba(255, 182, 193, 0.3) 0%, transparent 50%);
+    animation: floatHearts 20s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px);
+        opacity: 0.7;
+    }
+    75% {
+        transform: translateY(-20px) translateX(5px);
+        opacity: 0.9;
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-50vh) translateX(20px) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-20px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Ensure content is above background */
+#lock-screen, #main-content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 44px;     /* ⬆ Bigger headings */
+}
+
+h2 {
+    font-size: 34px;
+}
+
+section {
+    margin-bottom: 70px;  /* ❌ spacing NOT increased */
+    padding: 0 20px;
+}
+
+#lock-screen, #main-content {
+    margin-top: 8%;
+}
+
+input {
+    padding: 12px;
+    font-size: 22px;     /* ⬆ Bigger input */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 22px;     /* ⬆ Bigger buttons */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 8px;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#no-btn {
+    background-color: #ffffff;
+    color: #d6336c;
+    border: 2px solid #d6336c;
+}
+
+#love-letter p {
+    font-size: 26px;     /* ⬆ Bigger love letter */
+    line-height: 1.6;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* ===== SLIDESHOW ===== */
+.slideshow {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+.slideshow img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .slideshow {
+        width: 90%;
+        max-width: 350px;
+        height: 450px;
+    }
+}
+
+.quiz-question {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+.quiz-question p:first-child {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.question-feedback {
+    font-size: 24px;
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+.quiz-question button:disabled {
+    cursor: not-allowed;
+}
+
+#heart-container span {
+    font-size: 52px;     /* ⬆ Bigger hearts */
+    cursor: pointer;
+    display: inline-block;
+    margin: 6px;
+    transition: transform 0.3s ease;
+}
+
+#heart-container span:hover {
+    transform: scale(1.4);
+}
+
+#valentine {
+    position: relative;
+    height: 260px;
+}
+
+#valentine h1 {
+    font-size: 48px;
+}
